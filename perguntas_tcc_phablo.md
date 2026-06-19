@@ -252,11 +252,18 @@ _(A sua pesquisa e redação deste TCC se classifica como um **Estudo de Caso** 
 _(Antes de relatar o que você fez na prática, como a literatura/livros clássicos definem a teoria das áreas em que você atuou? Como a teoria define "Verificação e Validação de Software"? Como a teoria define "Segurança e Controle de Acesso em Aplicações Web"?)_
 **Sua Resposta:**
 
->
+> A fundamentação das atividades realizadas apoia-se em padrões clássicos da Engenharia de Software.
+> - **Verificação e Validação (V&V):** Segundo o *SWEBOK V3* (Software Engineering Body of Knowledge) e a norma IEEE 1012, a Validação visa garantir que o software atende às necessidades operacionais do usuário ("estamos construindo o produto certo?"), enquanto a Verificação foca em garantir que o sistema está em conformidade com as suas especificações e requisitos documentados ("estamos construindo o produto da maneira certa?"). Na minha atuação, aplicar V&V significou confrontar a documentação (Casos de Uso) com a interface (Figma), eliminando inconsistências precocemente.
+> - **Qualidade de Software:** O modelo de qualidade ISO/IEC 25010 (SQuaRE) estabelece a manutenibilidade, adequação funcional e segurança como atributos críticos do produto de software. A minha inserção na estruturação da suíte de testes automatizados visou diretamente garantir a confiabilidade e manutenibilidade do código.
+> - **Segurança (Autenticação e Autorização):** A literatura técnica de cibersegurança e os padrões da IETF (como as RFCs 6749 e 7636) fundamentam a transição para protocolos modernos de delegação de autorização. O uso do OAuth 2.0 associado à extensão PKCE é atualmente o padrão exigido na literatura para mitigar ataques de interceptação em aplicações *Single Page Application* (SPA), preenchendo as lacunas de segurança do sistema original.
 
 ### 6.5 Motivação Ampla e Social
 
 _(Por que a resolução de problemas reais de autenticação e a vivência prática numa Fábrica de Software acadêmica são essenciais para a formação do Engenheiro de Software hoje? Como o seu relato pode ajudar estudantes de turmas futuras?)_
 **Sua Resposta:**
 
->
+> A vivência em uma Fábrica de Software acadêmica preenche uma lacuna fundamental na formação do Engenheiro de Software: a transição entre a teoria de sala de aula e a realidade ambígua e complexa do mercado de trabalho.
+> 
+> Ao atuar na evolução de um sistema real e de grande escopo como o SIPROS, deparei-me com desafios que raramente surgem em projetos acadêmicos isolados. O trabalho exigiu lidar com código legado, identificar a ausência de uma "fonte da verdade" unificada (divergências entre Casos de Uso e Protótipos), implementar boas práticas de qualidade (testes automatizados e *Code Review*) e colaborar continuamente dentro de uma equipe utilizando métodos ágeis.
+> 
+> O relato dessa experiência serve não apenas para validar os conhecimentos técnicos aplicados para evoluir o sistema, mas também como um guia prático para estudantes de turmas futuras. Ele demonstra a importância vital das *soft skills* — como autogerenciamento, comunicação ativa e capacidade investigativa — para atuar de forma profissional na resolução de problemas sistêmicos, comprovando que a Engenharia de Software vai muito além da simples escrita de código.
