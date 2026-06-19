@@ -6,7 +6,7 @@ Neste projeto, **Phablo Tavares** não se restringiu à criação de código nov
 
 ## Pull Requests Revisados por Phablo
 
-As seguintes Pull Requests foram revisadas (`reviewed-by`) por Phablo, indicando seu escrutínio antes de serem inseridas nas ramificações principais do projeto:
+As seguintes Pull Requests foram revisadas, aprovadas ou mescladas por Phablo, indicando seu escrutínio antes de serem inseridas nas ramificações principais do projeto:
 
 1. **PR #395: #394 - endpoint de geração de relatorios de inscricoes**
    - **Revisado em:** Junho de 2026
@@ -20,11 +20,15 @@ As seguintes Pull Requests foram revisadas (`reviewed-by`) por Phablo, indicando
    - **Revisado em:** Maio de 2026
    - **Contexto:** Revisão das regras de front-end para o dashboard do candidato, confirmando layouts e consumo de API.
 
-4. **PR #289: feature-176-integracao-oauth-google-recuperacao-senha**
+4. **PR #319: #317 - Adiciona testes de sistemae relatorio**
+   - **Revisado em:** Maio de 2026
+   - **Contexto:** Revisão e aprovação da automação de testes de sistema (Cypress) para os fluxos de Autenticação via Google e Recuperação de Senha, assegurando a qualidade e cobertura do código entregue pela equipe.
+
+5. **PR #289: feature-176-integracao-oauth-google-recuperacao-senha**
    - **Revisado em:** Maio de 2026
    - **Contexto:** Esta PR envolvia componentes complexos que Phablo conhecia muito bem (OAuth). Ele conferiu o andamento de membros que compartilharam a mesma Issue #176 para garantir a coesão de arquitetura.
 
-5. **PR #100: #89 - feature 89 ambientacao ester adaianne**
+6. **PR #100: #89 - feature 89 ambientacao ester adaianne**
    - **Revisado em:** Março de 2026
    - **Contexto:** Revisão de passos iniciais e documentação, garantindo a adaptação e integração de outros membros no escopo, como a integrante da Equipe Dourada, **Ester Adaiane Oliveira Ferreira**.
 

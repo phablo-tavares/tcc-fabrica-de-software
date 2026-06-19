@@ -3,85 +3,54 @@
 
 \section{Motivação e Justificativa}
 
-Esta seção deve mostrar que o trabalho aqui descrito tem valor acadêmico e prático. 
-Apresente inicialmente o cenário geral do trabalho.
-Explique brevemente os conceitos do trabalho realizado, que é geralmente relacionado ao desenvolvimento ou manutenção de software, e por que esses processos são relevantes para a indústria de software e para a sociedade em geral.
+A sociedade contemporânea apresenta uma dependência crescente em relação a sistemas de software, exigindo que aplicações, especialmente em contextos institucionais e governamentais, sejam desenvolvidas com alto rigor arquitetural e foco em segurança. Plataformas acadêmicas lidam diariamente com dados sensíveis e necessitam de processos eficientes de desenvolvimento e manutenção contínua. 
 
-Explique o problema que motivou o desenvolvimento ou a manutenção do software em que você atuou.
-Mostre a importância de resolver este tipo de problema com atuação em equipe, destacando desafios comuns e a necessidade de boas práticas de processo para organizar o trabalho da equipe.
-Justifique por que relatar essa experiência traz contribuições acadêmicas e práticas. Argumente, por exemplo:
+O Sistema Integrado de Processos Seletivos (SIPROS) da Universidade Federal de Goiás (UFG) foi concebido para centralizar e padronizar editais de seleção. Contudo, em seu estado prévio ao semestre letivo de 2026/1, o sistema apresentava dívidas técnicas significativas: fluxos simulados (mockados), rotas desconexas, credenciais embutidas diretamente no código-fonte e ausência de uma camada de autenticação robusta.
 
-\begin{itemize}
-    \item dependência crescente da sociedade atual em relação a software.
-    \item relevância de processos eficientes de desenvolvimento e manutenção para a indústria de software.
-    \item importância da experiência prática para formação profissional.
-    \item contribuição do relato para outros estudantes, equipes ou organizações.
-\end{itemize}
-
-Mostre por que a experiência relatada neste trabalho é relevante para estudo e prática de Engenharia de Software, por exemplo, em termos de desafios enfrentados pela equipe, complexidade do sistema ou importância do produto para as partes interessadas (usuários, organização ou toda a sociedade).
+Atuar na resolução desses problemas em um ambiente colaborativo é fundamental. O trabalho em equipe em projetos de software reais traz desafios organizacionais e técnicos que não podem ser simulados em projetos acadêmicos teóricos isolados. A vivência e a aplicação de boas práticas de Engenharia de Software, em um cenário legado e em constante evolução, proporcionam um ganho prático substancial. O relato desta experiência justifica-se por sua valiosa contribuição acadêmica e prática, detalhando como problemas críticos de segurança e consistência de interface podem ser resolvidos. Para estudantes e futuras turmas, este documento serve como um guia de lições aprendidas; para a coordenação da Fábrica de Software, documenta a evolução arquitetural do próprio SIPROS.
 
 \section{Contexto da Experiência}
 
-Situe o leitor no tema do seu projeto específico, tanto em termos de objetivo do projeto quanto de organização do processo de trabalho e das equipes. Descreva: 
+O presente relato se insere no contexto da disciplina de Prática em Engenharia de Software, ofertada pelo Instituto de Informática da UFG durante o semestre letivo de 2026/1. A Fábrica de Software acadêmica tem como propósito simular o ambiente de mercado e propõe aos discentes a manutenção evolutiva e refatoração de sistemas reais.
 
-\begin{itemize}
-    \item o ambiente onde a experiência ocorreu: empresa, laboratório, projeto acadêmico ou organização.
-    \item tipo de equipe (tamanho, papéis, metodologia, subdivisões).
-    \item contexto do projeto (novo desenvolvimento, manutenção evolutiva, correção de bugs etc.).
-\end{itemize}
-
-Não entre em detalhes técnicos. Apenas apresente o cenário geral do projeto. Detalhes aparecem no Capítulo~\ref{cap:relato}.
+O autor do trabalho integrou a "Equipe Dourada", composta por um total de sete discentes, responsável por atuar no desenvolvimento \textit{full-stack} do sistema SIPROS. No que tange à organização do processo de desenvolvimento, a equipe não esteve obrigada a adotar de forma estrita nenhum \textit{framework} ágil específico. Em vez disso, adotou-se uma metodologia de desenvolvimento \textbf{inspirada} nas metodologias ágeis e no \textit{Scrum}, incorporando suas principais características (como as \textit{Sprints}), mas sendo adaptada continuamente para o contexto e necessidades da equipe ao longo do semestre. A coordenação da Fábrica atuou em um papel semelhante ao de um \textit{Product Owner}, definindo as demandas e prioridades, enquanto os discentes possuíam autonomia para o autogerenciamento, divisão de tarefas e aplicação de ferramentas visuais, como quadros \textit{Kanban}.
 
 \section{Objetivo do Trabalho}
 
-Um trabalho acadêmico de conclusão de curso deve ter um objetivo geral, que pode ser desdobrado em objetivos específicos. Defina inicialmente um único objetivo geral para o seu TCC e desdobre este objetivo geral em objetivos menores e mais específicos, necessários para alcançar o objetivo geral.
+Este Trabalho de Conclusão de Curso possui um objetivo principal que delineia a pesquisa, sendo o mesmo desdobrado em metas específicas que orientam a descrição dos resultados obtidos.
 
 \subsection{Objetivo Geral}
 
-Declare claramente o objetivo principal do TCC.
-Por exemplo: "O objetivo deste Trabalho de Conclusão de Curso (TCC) é descrever e analisar a experiência de participação em uma equipe de desenvolvimento e manutenção de software, analisando práticas, desafios e aprendizados vivenciados nesta experiência."
+O objetivo principal deste trabalho é descrever e analisar a experiência prática de evolução e refatoração \textit{full-stack} do sistema SIPROS no contexto da Fábrica de Software acadêmica da UFG, com ênfase na implementação de mecanismos robustos de segurança, autenticação e na adoção de práticas visando a elevação da qualidade do software.
 
 \subsection{Objetivos Específicos}
 
-Apresente os objetivos específicos que detalham o objetivo geral e representam marcos importantes para cumprir este objetivo.
-Exemplos:
+Para alcançar o objetivo geral traçado, foram definidos os seguintes objetivos específicos:
 
 \begin{enumerate}
-    \item Descrever o processo de trabalho adotado pela equipe.
-    \item Relatar as atividades realizadas no desenvolvimento e manutenção de software.
-    \item Identificar desafios técnicos e organizacionais enfrentados.
-    \item Apresentar as soluções adotadas e seus resultados.
-    \item Refletir sobre as lições aprendidas ao longo da experiência.
+    \item Descrever o ambiente organizacional, a metodologia de trabalho inspirada em métodos ágeis e a dinâmica de colaboração adotada no projeto SIPROS.
+    \item Relatar as implementações técnicas voltadas à segurança da informação, destacando a integração com o provedor de identidade do Google via Keycloak, utilizando a extensão PKCE.
+    \item Descrever a execução dos processos de Verificação e Validação (V\&V) aplicados para garantir a conformidade arquitetural da interface (\textit{front-end}) com os Casos de Uso estabelecidos.
+    \item Apresentar as práticas de Garantia de Qualidade (QA) adotadas pela equipe, evidenciando a estruturação da suíte de testes automatizados e a adoção obrigatória das revisões por pares (\textit{Code Review}).
+    \item Refletir criticamente sobre os desafios e gargalos vivenciados, analisando o amadurecimento e a evolução nas \textit{hard skills} e \textit{soft skills} proporcionados por essa vivência de caráter profissional.
 \end{enumerate}
-
-É importante retomar estes objetivos nas conclusões (Capítulo~\ref{cap:conclusoes}) sintetizando como cada objetivo foi alcançado e referenciando as partes (seções do TCC) que apresentam a realização destes objetivos. 
 
 \section{Metodologia do Trabalho}
 
-Explique como o TCC foi realizado em relação ao tipo de metodologia acadêmica. No caso do curso de Engenharia de Software, a metodologia do TCC envolve tipicamente:
+No âmbito metodológico acadêmico, a elaboração do presente trabalho baseia-se na metodologia de \textbf{pesquisa-ação}. Diferentemente de um estudo de caso puramente observacional, a pesquisa-ação caracteriza-se pela intervenção ativa do pesquisador no próprio ambiente para a resolução de um problema real de Engenharia de Software. Neste cenário, o autor atuou ativamente como membro da equipe de desenvolvimento, mapeando inconsistências, projetando soluções de \textit{design} arquitetural e efetuando modificações no código-fonte, participando diretamente da resolução do problema do sistema legado e na consequente implantação de um padrão de segurança seguro e atual.
 
-\begin{itemize}
-    \item Estudo de caso: análise crítica feita pelo autor do TCC sobre o trabalho de Engenharia de Software feito por terceiros; ou
-    \item Pesquisa-ação: resolução de problemas de Engenharia de Software feita pelo próprio autor do TCC.
-\end{itemize}
+Para fundamentar as atividades realizadas, a pesquisa se apoiou em literatura técnico-científica reconhecida na área, como o corpo de conhecimento da Engenharia de Software (SWEBOK) para os conceitos de Verificação e Validação, e normas internacionais como a ISO/IEC 25010 para modelagem de qualidade de produto. Complementarmente, consultou-se a documentação técnica pertinente (RFCs do protocolo OAuth 2.0 e manuais oficiais do \textit{Keycloak} e do ecossistema \textit{Angular}) e utilizou-se do acervo de artefatos produzidos internamente pelo projeto (\textit{Issues}, \textit{Pull Requests} e documentação de Casos de Uso). 
 
-A maioria dos TCCs seguem a metodologia de pesquisa-ação, mas alguns TCCs envolvem também um estudo de caso que identifica problemas a serem tratados com a metodologia pesquisa-ação. Apresente aqui uma visão geral dos conceitos da metodologia acadêmica utilizada no TCC.
-
-Não confunda a \textbf{metodologia de desenvolvimento do trabalho acadêmico} (pesquisa-ação, estudo de caso) com a \textbf{metodologia de desenvolvimento ou manutenção de software} usada pela equipe de Engenharia de Software (Scrum, Kanban etc.).
-Esta metodologia de Engenharia de Software será detalhada no Capítulo~\ref{cap:relato}.
-
-Descreva as fontes bibliográficas utilizadas na realização do trabalho, inclusive as fontes que explicam a metodologia acadêmica aplicada. Exemplos de fontes bibliográficas: literatura técnico-científica, documentação do projeto, sistemas similares, documentação de ferramentas, etc.
+Ressalta-se que a metodologia de desenvolvimento de software utilizada no dia a dia da equipe --- inspirada no paradigma ágil --- distingue-se desta metodologia acadêmica de pesquisa-ação e será tratada em maiores detalhes no Capítulo~\ref{cap:relato}.
 
 \section{Organização do Trabalho}
 
-Apresente um resumo do conteúdo de cada capítulo subsequente para ajudar o leitor a entender o fluxo do documento e onde se localiza cada tópico do trabalho.
-Exemplo:
+Para organizar o fluxo lógico do documento e guiar a leitura do relato, este trabalho encontra-se estruturado da seguinte forma:
 
 \begin{itemize}
-    \item Capítulo 2: Bases teóricas e tecnológicas utilizadas nas atividades realizadas.
+    \item Capítulo 2: Apresenta as bases teóricas, conceituais e tecnológicas requeridas na execução das tarefas, cobrindo tópicos de Qualidade de Software, Verificação e Validação, além das premissas de Segurança em Aplicações Web baseadas em tokens (OAuth 2.0 e PKCE).
     
-    \item Capítulo 3: Descrição da experiência individual vivenciada e do trabalho em equipe, com discussão dos resultados e lições aprendidas.
+    \item Capítulo 3: Concentra a descrição detalhada do relato de experiência do discente. Expõe os desafios enfrentados no \textit{onboarding}, as tomadas de decisões arquiteturais na integração com o GCP (\textit{Google Cloud Platform}), o rastreio e mitigação de defeitos e os resultados consolidados na melhoria do SIPROS.
     
-    \item Capítulo 5: Considerações finais, comparação com trabalhos correlatos e indicações de trabalhos futuros.
-    
+    \item Capítulo 4: Corresponde às considerações finais, contendo a reflexão crítica do autor sobre a evolução das competências necessárias ao Engenheiro de Software, um panorama dos Trabalhos Futuros para o projeto e as percepções consolidadas a partir do semestre na Fábrica de Software.
 \end{itemize}

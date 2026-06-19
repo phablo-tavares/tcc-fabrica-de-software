@@ -1,0 +1,22 @@
+# LaTeX auxiliares e arquivos temporários de compilação
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.synctex.gz
+*.ind
+*.ilg
+*.idx
+*.bcf
+*.run.xml
+*.brf
+*.nlo
+
+# Opcional: Se não quiser versionar o PDF final, descomente a linha abaixo
+# *.pdf
