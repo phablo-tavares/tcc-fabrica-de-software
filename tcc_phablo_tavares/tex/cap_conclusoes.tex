@@ -3,29 +3,37 @@
 
 \section{Considerações Finais}
 
-Retomar e resumir, sucintamente, a motivação do trabalho, bem como a metodologia, os resultados obtidos e as contribuições alcançadas por este trabalho de TCC.
+O presente trabalho teve como motivação relatar a experiência prática de evolução e refatoração do Sistema Integrado de Processos Seletivos (SIPROS) no escopo da Fábrica de Software da Universidade Federal de Goiás. A metodologia adotada fundamentou-se na pesquisa-ação e em processos inspirados em abordagens ágeis, garantindo adaptação contínua e entregas incrementais.
 
-Discuta especificamente o \textbf{alcance dos objetivos} geral e específicos.
+A análise da vivência demonstra que o objetivo geral foi plenamente alcançado: a equipe implementou com sucesso os mecanismos de segurança necessários (Keycloak e PKCE) e consolidou práticas robustas de garantia da qualidade (QA) no \textit{front-end} e \textit{back-end}. De forma análoga, os objetivos específicos foram concretizados por meio do mapeamento de V\&V da interface, da adoção sistemática de \textit{Code Review} e da reestruturação da base de testes automatizados, erradicando abordagens provisórias herdadas e entregando um sistema arquiteturalmente mais maduro.
 
 \section{Síntese da Experiência na Fábrica de Software}
 
-Apresente uma síntese da experiência vivenciada, destacando os aspectos mais relevantes do processo, os principais resultados e a importância da participação no projeto para o desenvolvimento acadêmico e profissional do aluno. 
+A imersão na Fábrica de Software revelou uma disparidade substancial entre projetos estritamente acadêmicos e a atuação em um sistema de criticidade real. A responsabilidade exigida ao transacionar dados sensíveis e gerenciar a infraestrutura de uma aplicação com impacto institucional exigiu da equipe um nível de profissionalismo inerente ao mercado de trabalho, moldando positivamente a postura técnica e ética dos discentes envolvidos.
 
-Discutir as principais lições aprendidas, sintetizando respostas para as seguintes perguntas:
+No que tange aos aprendizados, a experiência proporcionou uma evolução evidente tanto em competências técnicas (\textit{hard skills}) quanto comportamentais (\textit{soft skills}). Houve grande consolidação no domínio do \textit{framework} Angular, na orquestração de contêineres via Docker e na integração de segurança com a \textit{Google Cloud Platform} (GCP) e OAuth 2.0. Sob a ótica comportamental, o projeto instigou aprimoramentos no autogerenciamento, na comunicação interativa com os pares e na autonomia para defender e aplicar decisões arquiteturais diante de problemas complexos.
+
+As principais dificuldades enfrentadas concentraram-se na curva inicial de aprendizado para a configuração de infraestrutura (\textit{Keycloak}) e na ausência temporária de uma "fonte da verdade" unificada para os requisitos de \textit{front-end}. 
+
+Como lições aprendidas e sugestões para os estudantes que vivenciarão a Fábrica de Software em semestres futuros, recomenda-se fortemente:
 \begin{enumerate}
-    \item Quais são as suas impressões sobre a experiência realizada de prática de Engenharia de Software em um projeto real da Fábrica de Software?
-    \item Quais os principais aprendizados, conquistas e evoluções em competências pessoais/comportamentais (\textit{soft skills}) e técnicas (\textit{hard skills}) obtidos da experiência realizada?
-    \item Há outros benefícios associados à esta experiência, além de melhoria de competências \textit{soft} e \textit{hard}?
-    \item Quais as principais dificuldades enfrentadas na experiência prática vivenciada?
-    \item Quais sugestões você daria para estudantes que irão vivenciar esta experiência nos próximos semestres?
+    \item \textbf{Comunicação Proativa e Cultura de Code Review:} Em ambientes colaborativos, a transparência sobre qual funcionalidade está sendo desenvolvida e a disposição para revisar o código dos colegas são essenciais para evitar conflitos no repositório. O processo de revisão deve ser encarado não como um obstáculo, mas como a principal ferramenta de disseminação de conhecimento.
+    \item \textbf{Gestão Ativa de Débito Técnico e Código Legado:} Não tenham receio de atuar em bases de código legadas. O primeiro instinto de um desenvolvedor iniciante pode ser reescrever todos os componentes do zero, mas a verdadeira maturidade em Engenharia de Software demonstra-se na habilidade de analisar, compreender o legado e refatorá-lo de forma incremental e segura.
+    \item \textbf{Priorização da Garantia de Qualidade:} A cultura de testes de unidade nunca deve ser tratada como uma etapa secundária ou deixada para o final. Valorizem a escrita e a automação de testes desde o primeiro dia da \textit{Sprint}, garantindo que a evolução do software não se torne refém de regressões ocultas no futuro.
+    \item \textbf{Definição de uma Fonte da Verdade:} Sempre certifiquem-se de alinhar os requisitos técnicos com os documentos formais (como os Casos de Uso) antes de iniciar a prototipação e o desenvolvimento no \textit{front-end}. O alinhamento precoce previne o desperdício de tempo decorrente de inúmeros retrabalhos de interface.
 \end{enumerate}
 
 \section{Trabalhos Relacionados}
 
-Esta seção deve referenciar estudos, artigos, relatos de experiência e outros trabalhos acadêmicos que abordam temas semelhantes ao deste TCC. 
+O relato descrito corrobora com a literatura existente no campo de Engenharia de Software Empírica, particularmente naqueles trabalhos que documentam os desafios na adoção de metodologias inspiradas em práticas ágeis em ambientes educacionais controlados. As observações sobre a necessidade de rigor na transição de fluxos de autenticação em estágio de prototipação para implementações maduras baseadas no protocolo OAuth 2.0 com PKCE também encontram respaldo em estudos de caso contemporâneos sobre Segurança em Aplicações de Página Única (SPAs). Observa-se que a adoção de práticas sólidas de V\&V, testes automatizados e \textit{Code Review} continua sendo apontada pela literatura como a estratégia mais eficaz de mitigação de débito técnico orgânico.
 
-Deve ser feita uma análise comparativa entre os trabalhos referenciados e o presente documento de TCC. A comparação com trabalhos existentes permite situar o presente relato no contexto da literatura, identificar contribuições relevantes e confirmar ou refutar resultados e hipóteses apresentadas em outros trabalhos.
- 
 \section{Trabalhos Futuros}
 
-Discuta as limitações do presente trabalho, indicando como futuros trabalhos podem reduzir essas limitações. Também aponte possíveis melhorias ou perspectivas para trabalhos futuros que complementem os resultados gerados neste TCC. Por exemplo, indique potenciais melhorias no produto de software que foi alvo dos processos de desenvolvimento ou manutenção, possíveis melhorias nesses processos, ou  ainda possíveis aplicações de ferramentas ou tecnologias que poderiam melhorar o produto ou o processo de Engenharia de Software.
+Apesar da evolução estrutural promovida neste ciclo, o SIPROS apresenta oportunidades contínuas para aperfeiçoamento. Diante das limitações temporais do semestre e do escopo do projeto, sugerem-se os seguintes trabalhos futuros:
+
+\begin{itemize}
+    \item \textbf{Testes de Ponta a Ponta (\textit{End-to-End}):} Iniciar a implementação de testes E2E no \textit{front-end} utilizando ferramentas como \textit{Cypress}, a fim de simular e validar o fluxo completo do usuário, complementando a suíte de testes de unidade já existente.
+    \item \textbf{Expansão da Cobertura do \textit{Back-end}:} Dar seguimento à estruturação das rotinas de QA, visando atingir uma cobertura abrangente nos serviços e controladores de maior criticidade da aplicação.
+    \item \textbf{Conclusão do V\&V de Interface:} Finalizar o mapeamento de Verificação e Validação para os componentes visuais e telas secundárias remanescentes, garantindo a paridade total de todos os módulos com os modelos textuais de Casos de Uso.
+    \item \textbf{Otimização do Ambiente Local:} Avaliar a reestruturação dos contêineres Docker e a carga de serviços simulados localmente no repositório, com o intuito de reduzir o elevado consumo de recursos de \textit{hardware} (\textit{overhead}) nas máquinas de desenvolvimento pessoal.
+\end{itemize}

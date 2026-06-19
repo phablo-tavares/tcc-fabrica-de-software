@@ -9,17 +9,17 @@ O desenvolvimento e a manutenção do SIPROS envolveram três eixos técnicos ce
 
 \subsection{Autenticação e Segurança em Aplicações Web}
 
-A autenticação em Aplicações de Página Única (SPAs), como aquelas desenvolvidas em Angular, apresenta desafios de segurança específicos. A literatura atual desencoraja o uso do \textit{Implicit Flow} para OAuth 2.0 devido ao risco de vazamento de \textit{tokens} no histórico do navegador ou por ataques de interceptação (CSRF). 
+A autenticação em Aplicações de Página Única (SPAs), como aquelas desenvolvidas em Angular, apresenta desafios de segurança específicos. A literatura atual \cite{rfc6749} desencoraja o uso do \textit{Implicit Flow} para OAuth 2.0 devido ao risco de vazamento de \textit{tokens} no histórico do navegador ou por ataques de interceptação (CSRF). 
 
-Para mitigar essas vulnerabilidades, o padrão ouro atual é o \textit{Authorization Code Flow} com a extensão PKCE (\textit{Proof Key for Code Exchange}). O PKCE substitui a necessidade de um \textit{client secret} estático por um verificador criptográfico dinâmico gerado a cada requisição, garantindo segurança robusta na delegação de autorização sem expor credenciais sensíveis no lado do cliente.
+Para mitigar essas vulnerabilidades, o padrão ouro atual é o \textit{Authorization Code Flow} com a extensão PKCE (\textit{Proof Key for Code Exchange}) \cite{rfc7636}. O PKCE substitui a necessidade de um \textit{client secret} estático por um verificador criptográfico dinâmico gerado a cada requisição, garantindo segurança robusta na delegação de autorização sem expor credenciais sensíveis no lado do cliente.
 
 \subsection{Verificação e Validação (V\&V)}
 
-Segundo o \textit{Software Engineering Body of Knowledge} (SWEBOK) e a norma IEEE 1012, os processos de Verificação e Validação (V\&V) visam assegurar que o software seja construído corretamente e atenda aos requisitos definidos. A Verificação assegura a conformidade do sistema com suas especificações técnicas (ex: protótipos em Figma vs. Casos de Uso), enquanto a Validação garante que a solução atende à real necessidade do usuário final. No ciclo de vida do projeto, a aplicação sistemática de V\&V precocemente impede que inconsistências de \textit{design} ou requisitos conflitantes avancem para as fases de produção.
+Segundo o \textit{Software Engineering Body of Knowledge} (SWEBOK) \cite{swebok_v3} e a norma IEEE 1012, os processos de Verificação e Validação (V\&V) visam assegurar que o software seja construído corretamente e atenda aos requisitos definidos. A Verificação assegura a conformidade do sistema com suas especificações técnicas (ex: protótipos em Figma vs. Casos de Uso), enquanto a Validação garante que a solução atende à real necessidade do usuário final. No ciclo de vida do projeto, a aplicação sistemática de V\&V precocemente impede que inconsistências de \textit{design} ou requisitos conflitantes avancem para as fases de produção.
 
 \subsection{Qualidade e Testes de Software}
 
-A qualidade do software pode ser definida por atributos como adequação funcional, manutenibilidade e confiabilidade, conforme a norma internacional ISO/IEC 25010. A automação de testes de unidade é um pilar prático para sustentar essa qualidade. Testes adequadamente isolados e rastreáveis garantem que novas implementações e refatorações arquiteturais ocorram sem causar regressões, reduzindo significativamente o débito técnico ao longo do tempo.
+A qualidade do software pode ser definida por atributos como adequação funcional, manutenibilidade e confiabilidade, conforme a norma internacional ISO/IEC 25010 \cite{iso25010}. A automação de testes de unidade é um pilar prático para sustentar essa qualidade. Testes adequadamente isolados e rastreáveis garantem que novas implementações e refatorações arquiteturais ocorram sem causar regressões, reduzindo significativamente o débito técnico ao longo do tempo.
 
 \section{Processos de Ciclo de Vida de Software}
 
@@ -29,7 +29,7 @@ Neste contexto, o processo de V\&V integra-se a todas as fases do ciclo de vida,
 
 \section{Organização do Trabalho Colaborativo em Software}
 
-No desenvolvimento contemporâneo, a agilidade na entrega de valor é essencial. As metodologias ágeis (como Scrum e Kanban) fornecem um arcabouço para desenvolvimento iterativo, divisão de tarefas e entregas contínuas, mantendo o foco na adaptação a mudanças em vez do planejamento engessado.
+No desenvolvimento contemporâneo, a agilidade na entrega de valor é essencial. As metodologias ágeis (como Scrum e Kanban) \cite{scrum_guide} fornecem um arcabouço para desenvolvimento iterativo, divisão de tarefas e entregas contínuas, mantendo o foco na adaptação a mudanças em vez do planejamento engessado.
 
 Nesse modelo colaborativo, a comunicação clara e o compartilhamento de responsabilidades são cruciais. Práticas como a \textbf{Revisão de Código (\textit{Code Review})} funcionam tanto como uma barreira técnica para detectar defeitos antes da integração, quanto como uma ferramenta gerencial para nivelar o conhecimento da equipe sobre a base de código, garantindo a coesão da arquitetura e o cumprimento dos padrões estabelecidos pelo projeto.
 
@@ -38,9 +38,9 @@ Nesse modelo colaborativo, a comunicação clara e o compartilhamento de respons
 As atividades de Engenharia de Software no SIPROS foram suportadas por um ecossistema de ferramentas sólidas da indústria, cujas escolhas basearam-se na aderência à arquitetura pré-estabelecida do projeto. 
 
 \begin{itemize}
-    \item \textbf{Keycloak:} Trata-se de uma solução robusta em código aberto para gerenciamento de identidades e acessos. Seu principal ponto forte é a segurança avançada e a facilidade de integração via OAuth 2.0. Contudo, apresenta a limitação de uma curva de aprendizado íngreme em sua configuração inicial, exigindo alto conhecimento sobre protocolos de rede e gestão de variáveis de ambiente.
+    \item \textbf{Keycloak:} Trata-se de uma solução robusta em código aberto \cite{keycloak_docs} para gerenciamento de identidades e acessos. Seu principal ponto forte é a segurança avançada e a facilidade de integração via OAuth 2.0. Contudo, apresenta a limitação de uma curva de aprendizado íngreme em sua configuração inicial, exigindo alto conhecimento sobre protocolos de rede e gestão de variáveis de ambiente.
     
-    \item \textbf{Angular:} Utilizado como \textit{framework front-end}, destaca-se pela sua arquitetura componentizada, viabilizando o desenvolvimento de interfaces altamente fiéis aos protótipos visuais. Sua principal limitação é a rigidez estrutural e a dependência do \textit{TypeScript}, que impõem barreiras de entrada maiores para desenvolvedores recém-integrados.
+    \item \textbf{Angular:} Utilizado como \textit{framework front-end} \cite{angular_docs}, destaca-se pela sua arquitetura componentizada, viabilizando o desenvolvimento de interfaces altamente fiéis aos protótipos visuais. Sua principal limitação é a rigidez estrutural e a dependência do \textit{TypeScript}, que impõem barreiras de entrada maiores para desenvolvedores recém-integrados.
     
     \item \textbf{Docker:} Fundamental para o isolamento das dependências e padronização do ambiente local de desenvolvimento. Como desvantagem, exige um elevado custo computacional (\textit{overhead}), o que pode causar instabilidades e lentidão em máquinas de desenvolvimento com capacidades de \textit{hardware} mais restritas.
     
