@@ -16,7 +16,7 @@ Abaixo estão listadas as principais issues onde **Phablo Tavares** constou como
 
 ## 3. Issue #179: Autenticação Keycloak e Tratamento de Sessão
 - **Status:** Concluída (Fechada em 28/04/2026)
-- **Descrição:** Trabalho feito em conjunto com outros membros da equipe (Thiago-V-A, FilipePaco, hugojardim, LNunnes, etc.) para eliminar lógicas paralelas, tratar o redirecionamento após o login que caía numa rota vazia `/dashboard` e verificar regras da senha (RN03).
+- **Descrição:** Trabalho feito em conjunto com outros membros da Equipe Dourada (Thiago Vicente de Aquino, Felipe Duarte da Rocha Paço, Hugo Moreno Veiga Jardim, Lucas Gabriel Nunes Alves, etc.) para eliminar lógicas paralelas, tratar o redirecionamento após o login que caía numa rota vazia `/dashboard` e verificar regras da senha (RN03).
 - **Atuação:** O usuário atuou ativamente nesta task implementando restrições de session no Angular e a exibição do Hero Logado, bem como participando das PRs relacionadas (ex: `feature-179-autenticacao-keycloak-e-tratamento-de-sessao`).
 
 ## 4. Issue #176: Integração OAuth Google e Recuperação de Senha
@@ -32,4 +32,4 @@ Abaixo estão listadas as principais issues onde **Phablo Tavares** constou como
 ## 6. Issue #309: Testes de Integração
 - **Status:** Concluída (Fechada em 17/05/2026)
 - **Descrição:** Testes robustos englobando o fluxo Keycloak, Autenticação, Banco de Dados, etc.
-- **Atuação:** Como assignee junto à equipe de testes (Hugo Jardim), auxiliou no fluxo que contemplava o OAuth Keycloak (que ele próprio havia implementado anteriormente).
+- **Atuação:** Como assignee junto a Hugo Moreno Veiga Jardim (membro da Equipe Dourada), auxiliou no fluxo que contemplava o OAuth Keycloak (que ele próprio havia implementado anteriormente).

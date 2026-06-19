@@ -6,6 +6,18 @@ Este documento consolida as informações referentes à atuação de **Phablo Ta
 
 A pesquisa foi realizada utilizando ferramentas de extração e análise diretamente no GitHub da equipe, visando rastreabilidade total das suas contribuições.
 
+## Equipe de Desenvolvimento (Equipe Dourada)
+
+Durante o semestre na Fábrica de Software, Phablo Tavares participou da **Equipe Dourada**, que contou com os seguintes integrantes:
+
+- **Phablo Tavares Paixão** (eu)
+- **Thiago Vicente de Aquino**
+- **Hugo Moreno Veiga Jardim**
+- **Ester Adaiane Oliveira Ferreira**
+- **Lucas Gabriel Nunes Alves**
+- **Felipe Duarte da Rocha Paço**
+- **José Alves de Oliveira Neto**
+
 ## Período de Atuação
 
 Os registros das atividades rastreadas mostram contribuições em várias fases do projeto, concentradas de maneira mais intensa entre **março de 2026** e **junho de 2026**.

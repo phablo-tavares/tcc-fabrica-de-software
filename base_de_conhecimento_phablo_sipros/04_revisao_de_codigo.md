@@ -26,7 +26,7 @@ As seguintes Pull Requests foram revisadas (`reviewed-by`) por Phablo, indicando
 
 5. **PR #100: #89 - feature 89 ambientacao ester adaianne**
    - **Revisado em:** Março de 2026
-   - **Contexto:** Revisão de passos iniciais e documentação, garantindo a adaptação e integração de outros membros no escopo.
+   - **Contexto:** Revisão de passos iniciais e documentação, garantindo a adaptação e integração de outros membros no escopo, como a integrante da Equipe Dourada, **Ester Adaiane Oliveira Ferreira**.
 
 ## Conclusão
 
