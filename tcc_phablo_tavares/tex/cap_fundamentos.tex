@@ -1,45 +1,50 @@
 \chapter{Bases Teóricas e Tecnológicas}
 \label{cap:fundamentos}
 
-Este capítulo deve descrever a base conceitual do TCC. Explicar os pilares teóricos específicos que sustentam o projeto, como por exemplo: arquitetura de software, requisitos, ciclo de vida, etc. 
+Este capítulo descreve os pilares teóricos e as tecnologias que fundamentaram as atividades de evolução e refatoração do SIPROS. Apresenta-se o embasamento em segurança para aplicações web, práticas de Verificação e Validação (V\&V), processos de evolução de software e metodologias de trabalho colaborativo, além da análise crítica das principais ferramentas adotadas.
 
-Apresente uma visão geral do tópico trabalhado no TCC, sem tentar falar de Engenharia de Software como um todo. Pode falar do ciclo de vida de processos de software, mas o  foco deve ser somente no que foi \textbf{efetivamente trabalhado e realizado no seu próprio TCC}.
+\section{Tópicos Específicos Trabalhados no TCC}
 
-O capítulo também deve fazer uma síntese dos principais conceitos instrumentais (ferramentas e tecnologias) aplicados ao longo do TCC, destacando como eles ajudam a compreensão da experiência relatada neste documento. 
+O desenvolvimento e a manutenção do SIPROS envolveram três eixos técnicos centrais da Engenharia de Software: segurança, validação de interface e qualidade de código.
 
-Este capítulo deve estabelecer uma conexão clara entre a teoria utilizada, as ferramentas aplicadas e as atividades práticas desenvolvidas, preparando o leitor para o capítulo seguinte, que é o próprio relato da experiência.
+\subsection{Autenticação e Segurança em Aplicações Web}
 
-\section{Tópico Específico trabalhado no TCC}
+A autenticação em Aplicações de Página Única (SPAs), como aquelas desenvolvidas em Angular, apresenta desafios de segurança específicos. A literatura atual desencoraja o uso do \textit{Implicit Flow} para OAuth 2.0 devido ao risco de vazamento de \textit{tokens} no histórico do navegador ou por ataques de interceptação (CSRF). 
 
-Apresente os conceitos fundamentais do tópico específico da Engenharia de Software que foi trabalhado no TCC, destacando sua importância para projetos de Engenharia de Software que precisam utilizar métodos, práticas e técnicas para o desenvolvimento e a evolução de sistemas computacionais. 
+Para mitigar essas vulnerabilidades, o padrão ouro atual é o \textit{Authorization Code Flow} com a extensão PKCE (\textit{Proof Key for Code Exchange}). O PKCE substitui a necessidade de um \textit{client secret} estático por um verificador criptográfico dinâmico gerado a cada requisição, garantindo segurança robusta na delegação de autorização sem expor credenciais sensíveis no lado do cliente.
 
-Coloque no título desta seção o tópico específico da Engenharia de Software que foi o assunto principal trabalhado no TCC. Por exemplo: Teste de Software; Requisitos de Software; Integração de Software; Técnicas de Validação de Software; Implementação de Interfaces Humano-Computador; Implementação de Funções de \textit{Backend} de Software. Se trabalhou em mais de um tópico, crie uma subseção para cada tópico, e não misture dois ou mais assuntos diferentes na mesma seção.
+\subsection{Verificação e Validação (V\&V)}
 
-Discuta os objetivos do tópico trabalhado, seus princípios e os desafios inerentes à criação e manutenção de software de qualidade. A seção deve estabelecer a base conceitual necessária para compreender qualquer atividade realizada no contexto do projeto descrito no trabalho.
+Segundo o \textit{Software Engineering Body of Knowledge} (SWEBOK) e a norma IEEE 1012, os processos de Verificação e Validação (V\&V) visam assegurar que o software seja construído corretamente e atenda aos requisitos definidos. A Verificação assegura a conformidade do sistema com suas especificações técnicas (ex: protótipos em Figma vs. Casos de Uso), enquanto a Validação garante que a solução atende à real necessidade do usuário final. No ciclo de vida do projeto, a aplicação sistemática de V\&V precocemente impede que inconsistências de \textit{design} ou requisitos conflitantes avancem para as fases de produção.
+
+\subsection{Qualidade e Testes de Software}
+
+A qualidade do software pode ser definida por atributos como adequação funcional, manutenibilidade e confiabilidade, conforme a norma internacional ISO/IEC 25010. A automação de testes de unidade é um pilar prático para sustentar essa qualidade. Testes adequadamente isolados e rastreáveis garantem que novas implementações e refatorações arquiteturais ocorram sem causar regressões, reduzindo significativamente o débito técnico ao longo do tempo.
 
 \section{Processos de Ciclo de Vida de Software}
 
-Aqui são apresentados os principais processos de Engenharia de Software relacionados ao tópico trabalhado. Por exemplo, processos de Verificação e Validação, se o tópico é Teste de Software; ou processos de Planejamento e Monitoramento de projeto, se o tópico é Gerência de Projeto de Software. 
+A evolução do SIPROS inseriu-se primariamente nos processos de \textbf{Manutenção Evolutiva} e de \textbf{Garantia da Qualidade}. A manutenção de um sistema legado demanda um ciclo iterativo de análise, planejamento, modificação e validação. 
 
-São discutidas as características de cada processo, suas vantagens e limitações, bem como sua aplicabilidade em diferentes contextos. Esta fundamentação permite situar a atividade realizada dentro de um processo mais amplo de ciclo de vidade de software, que contempla o desenvolvimento e a manutenção de software.
-
-Cada processo deve ser apresentado de forma conceitual, indicando suas atividades genéricas e permitindo relacionar a teoria de Engenharia de Software com as tarefas específicas desempenhadas durante a experiência prática, independentemente da natureza dessas tarefas.
+Neste contexto, o processo de V\&V integra-se a todas as fases do ciclo de vida, atuando como um filtro de qualidade. Ao estabelecer a "fonte da verdade" (Casos de Uso) antes de programar as telas, o processo impede a propagação de defeitos das fases de engenharia de requisitos para o código-fonte, reduzindo custos de retrabalho e instabilidades operacionais.
 
 \section{Organização do Trabalho Colaborativo em Software}
 
-Discuta os aspectos relacionados ao trabalho em equipe no contexto de projetos de software, considerando especificamente o papel ou função desempenhado durante o trabalho de TCC. 
+No desenvolvimento contemporâneo, a agilidade na entrega de valor é essencial. As metodologias ágeis (como Scrum e Kanban) fornecem um arcabouço para desenvolvimento iterativo, divisão de tarefas e entregas contínuas, mantendo o foco na adaptação a mudanças em vez do planejamento engessado.
 
-Aborde temas como comunicação, coordenação, divisão de responsabilidades, interfaces com outros papéis típicos em equipes técnicas e desafios comuns enfrentados por equipes de desenvolvimento relacionadas ao papel desempenhado. 
-
-Esta seção deve fundamentar a sua análise da experiência ao participar de uma equipe real, destacando fatores humanos e organizacionais que influenciaram sua atuação no projeto.
+Nesse modelo colaborativo, a comunicação clara e o compartilhamento de responsabilidades são cruciais. Práticas como a \textbf{Revisão de Código (\textit{Code Review})} funcionam tanto como uma barreira técnica para detectar defeitos antes da integração, quanto como uma ferramenta gerencial para nivelar o conhecimento da equipe sobre a base de código, garantindo a coesão da arquitetura e o cumprimento dos padrões estabelecidos pelo projeto.
 
 \section{Ferramentas e Tecnologias Adotadas}
 
-Apresente e analise as ferramentas utilizadas para apoiar os processos e atividades discutidas anteriormente. 
+As atividades de Engenharia de Software no SIPROS foram suportadas por um ecossistema de ferramentas sólidas da indústria, cujas escolhas basearam-se na aderência à arquitetura pré-estabelecida do projeto. 
 
-As ferramentas devem ser comparadas a outras amplamente utilizadas na indústria de software, justificando sua escolha para o trabalho realizado. 
+\begin{itemize}
+    \item \textbf{Keycloak:} Trata-se de uma solução robusta em código aberto para gerenciamento de identidades e acessos. Seu principal ponto forte é a segurança avançada e a facilidade de integração via OAuth 2.0. Contudo, apresenta a limitação de uma curva de aprendizado íngreme em sua configuração inicial, exigindo alto conhecimento sobre protocolos de rede e gestão de variáveis de ambiente.
+    
+    \item \textbf{Angular:} Utilizado como \textit{framework front-end}, destaca-se pela sua arquitetura componentizada, viabilizando o desenvolvimento de interfaces altamente fiéis aos protótipos visuais. Sua principal limitação é a rigidez estrutural e a dependência do \textit{TypeScript}, que impõem barreiras de entrada maiores para desenvolvedores recém-integrados.
+    
+    \item \textbf{Docker:} Fundamental para o isolamento das dependências e padronização do ambiente local de desenvolvimento. Como desvantagem, exige um elevado custo computacional (\textit{overhead}), o que pode causar instabilidades e lentidão em máquinas de desenvolvimento com capacidades de \textit{hardware} mais restritas.
+    
+    \item \textbf{GitHub:} Plataforma consolidada para controle de versão baseado no \textit{Git}. Além do versionamento do código-fonte, provou-se indispensável no gerenciamento do fluxo de trabalho por meio do rastreio de problemas (\textit{Issues}) e no suporte direto à cultura de revisão de código (\textit{Pull Requests}).
+\end{itemize}
 
-Evite fazer apenas uma propaganda das ferramentas. Discuta os pontos fortes, mas analise também as limitações de cada ferramenta.
-Devem ser discutidos artefatos gerados nas atividades dos processos e a forma como as ferramentas apoiam a criação e evolução destes artefatos.
-
-A discussão de ferramentas permite contextualizar a forma como o trabalho da equipe e do autor do TCC foi organizado e como as atividades do autor se inseriram nos processos colaborativos da Engenharia de Software, conforme discutido na seção anterior.
+A conjunção dessas tecnologias propiciou as condições técnicas necessárias para sustentar as práticas metodológicas da equipe, viabilizando as refatorações discutidas no Capítulo~\ref{cap:relato}.

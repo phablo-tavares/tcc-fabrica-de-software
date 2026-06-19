@@ -28,6 +28,7 @@ Para gerar o PDF a partir do código LaTeX de forma limpa e sem necessidade de i
 
 1. Abra o terminal.
 2. Navegue até o diretório do seu TCC (onde está o arquivo `.tex` principal):
+
    ```bash
    cd tcc_phablo_tavares
    ```
@@ -36,12 +37,14 @@ Para gerar o PDF a partir do código LaTeX de forma limpa e sem necessidade de i
 
    **Opção 1 (Recomendada): Usando `latexmk`**
    O utilitário `latexmk` compila automaticamente o documento quantas vezes forem necessárias para resolver sumário, referências cruzadas e citações bibliográficas.
+
    ```bash
    docker run --rm -v "$PWD":/workdir -w /workdir texlive/texlive latexmk -pdf monografia-tcc-bes.tex
    ```
 
    **Opção 2: Usando `pdflatex` + `bibtex` (manual)**
    Caso prefira rodar passo a passo para ver exatamente o processo do LaTeX:
+
    ```bash
    docker run --rm -v "$PWD":/workdir -w /workdir texlive/texlive sh -c "pdflatex monografia-tcc-bes.tex && bibtex monografia-tcc-bes && pdflatex monografia-tcc-bes.tex && pdflatex monografia-tcc-bes.tex"
    ```
@@ -56,4 +59,14 @@ A compilação do LaTeX gera diversos arquivos auxiliares (`.aux`, `.log`, `.toc
 docker run --rm -v "$PWD":/workdir -w /workdir texlive/texlive latexmk -c monografia-tcc-bes.tex
 ```
 
-*(Dica: caso queira excluir também o PDF gerado para fazer uma limpeza completa, altere a flag `-c` minúscula para `-C` maiúscula).*
+_(Dica: caso queira excluir também o PDF gerado para fazer uma limpeza completa, altere a flag `-c` minúscula para `-C` maiúscula)._
+
+# Repositório do sipros
+
+/home/asus/Documentos/sipros
+
+caso queira acessar de fato o repositório do sipros o caminho absoluto é /home/asus/Documentos/sipros
+
+caso queira acessar o github do sipros:
+https://github.com/FabricaDeSoftwareINF/sipros/
+ou use o servidor mcp que você tem aceso ao meu github
