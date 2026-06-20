@@ -11,7 +11,14 @@ O desenvolvimento e a manutenção do SIPROS envolveram três eixos técnicos ce
 
 A autenticação em Aplicações de Página Única (SPAs), como aquelas desenvolvidas em Angular, apresenta desafios de segurança específicos. A literatura atual \cite{rfc6749} desencoraja o uso do \textit{Implicit Flow} para OAuth 2.0 devido ao risco de vazamento de \textit{tokens} no histórico do navegador ou por ataques de interceptação (CSRF). 
 
-Para mitigar essas vulnerabilidades, o padrão ouro atual é o \textit{Authorization Code Flow} com a extensão PKCE (\textit{Proof Key for Code Exchange}) \cite{rfc7636}. O PKCE substitui a necessidade de um \textit{client secret} estático por um verificador criptográfico dinâmico gerado a cada requisição, garantindo segurança robusta na delegação de autorização sem expor credenciais sensíveis no lado do cliente.
+Para mitigar essas vulnerabilidades, o padrão ouro atual é o \textit{Authorization Code Flow} com a extensão PKCE (\textit{Proof Key for Code Exchange}) \cite{rfc7636}. O PKCE substitui a necessidade de um \textit{client secret} estático por um verificador criptográfico dinâmico gerado a cada requisição, garantindo segurança robusta na delegação de autorização sem expor credenciais sensíveis no lado do cliente. A Figura \ref{fig:oauth_pkce} ilustra de forma sequencial o fluxo estabelecido no SIPROS envolvendo a aplicação cliente, o Keycloak e o Google.
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=0.9\textwidth]{./fig/diagrama_oauth_pkce.png}
+ \caption{Diagrama de Sequência do Fluxo OAuth 2.0 com PKCE adotado no SIPROS.}
+ \label{fig:oauth_pkce}
+\end{figure}
 
 \subsection{Verificação e Validação (V\&V)}
 

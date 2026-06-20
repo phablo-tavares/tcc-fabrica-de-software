@@ -11,7 +11,14 @@ No momento em que o projeto foi assumido pela equipe, o software encontrava-se e
 
 O relato ocorreu no contexto da disciplina de Prática em Engenharia de Software (Fábrica de Software), cujo objetivo é proporcionar vivência realista na manutenção e evolução de um sistema de grande porte. A equipe responsável, denominada "Equipe Dourada", foi composta por sete discentes. Destes, Ester e Lucas atuaram predominantemente na comunicação técnica com a coordenação, que por sua vez assumiu o papel semelhante ao de um \textit{Product Owner} (PO).
 
-Para o gerenciamento do processo de desenvolvimento, a equipe optou por uma metodologia flexível inspirada no \textit{Scrum} e no \textit{Kanban}. O trabalho foi organizado em iterações regulares (\textit{Sprints}) de duas semanas, ao fim das quais ocorriam reuniões de revisão diretamente com a coordenação para a validação das entregas. As principais tecnologias e ferramentas empregadas englobaram o Angular para o \textit{front-end}, Keycloak para o gerenciamento de identidades, Docker para o encapsulamento do ambiente, Figma para o \textit{design} de interfaces e a plataforma GitHub para versionamento de código e gestão das tarefas.
+Para o gerenciamento do processo de desenvolvimento, a equipe optou por uma metodologia flexível inspirada no \textit{Scrum} e no \textit{Kanban}. O trabalho foi organizado em iterações regulares (\textit{Sprints}) de duas semanas, ao fim das quais ocorriam reuniões de revisão diretamente com a coordenação para a validação das entregas. As principais tecnologias e ferramentas empregadas englobaram o Angular para o \textit{front-end}, Keycloak para o gerenciamento de identidades, Docker para o encapsulamento do ambiente, Figma para o \textit{design} de interfaces e a plataforma GitHub para versionamento de código e gestão das tarefas. Uma representação visual de como as tarefas eram distribuídas e acompanhadas através do quadro Kanban no GitHub Projects pode ser vista na Figura \ref{fig:kanban}.
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=0.9\textwidth]{./fig/fluxo_trabalho_kanban.png}
+ \caption{Quadro Kanban utilizado para o acompanhamento e gestão das tarefas da equipe.}
+ \label{fig:kanban}
+\end{figure}
 
 \subsection{Forma de Participação no Projeto}
 
@@ -47,7 +54,14 @@ No âmbito técnico, a substituição definitiva das telas estáticas e da auten
 
 \section{Avaliação de Qualidade de Software}
 
-A estratégia de qualidade ancorou-se em dois eixos paralelos de validação. O primeiro envolveu a estruturação de uma fundação formal para testes de unidade automatizados voltados ao \textit{back-end}, provendo a segurança indispensável para a evolução orgânica do código. O segundo eixo foi ancorado fortemente no fator humano por meio do processo obrigatório de \textit{Code Review}. Estabeleceu-se como norma inegociável que nenhuma alteração técnica seria introduzida na ramificação principal sem o escrutínio e aprovação por pares, assegurando aderência aos padrões de código preestabelecidos.
+A estratégia de qualidade ancorou-se em dois eixos paralelos de validação. O primeiro envolveu a estruturação de uma fundação formal para testes de unidade automatizados voltados ao \textit{back-end}, provendo a segurança indispensável para a evolução orgânica do código. O segundo eixo foi ancorado fortemente no fator humano por meio do processo obrigatório de \textit{Code Review}. Estabeleceu-se como norma inegociável que nenhuma alteração técnica seria introduzida na ramificação principal sem o escrutínio e aprovação por pares, assegurando aderência aos padrões de código preestabelecidos. A Figura \ref{fig:code_review} exemplifica a aplicação desta prática, evidenciando o painel de aprovação de um \textit{Pull Request} que passou pelo crivo da equipe.
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[width=0.9\textwidth]{./fig/evidencia_code_review.png}
+ \caption{Evidência do processo de \textit{Code Review} exigido antes da integração de novas funcionalidades.}
+ \label{fig:code_review}
+\end{figure}
 
 \section{Aprendizados e Desenvolvimento Profissional}
 
