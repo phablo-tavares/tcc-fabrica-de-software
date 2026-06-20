@@ -26,13 +26,89 @@ O autor do trabalho ingressou no projeto exercendo o papel de desenvolvedor \tex
 
 \section{Atividades Realizadas e Resultados Gerados}
 
-As atividades desenvolvidas abrangeram a intervenção simultânea em três frentes principais: segurança, interface e testes automatizados. A seguir, detalham-se as principais contribuições técnicas executadas pelo autor.
+As atividades desenvolvidas abrangeram a intervenção simultânea em três frentes principais: segurança, interface e testes automatizados. A seguir, detalham-se as principais contribuições técnicas executadas pelo autor. A Tabela \ref{tab:matriz_issues} consolida as principais intervenções técnicas realizadas, categorizando-as com base nos registros do repositório.
 
-A primeira frente consistiu na refatoração da camada de segurança (\textit{Issue} \#214 e \#253). O desenvolvimento exigiu a substituição do fluxo estático pela integração com o protocolo OAuth 2.0 via Keycloak, empregando especificamente o fluxo \textit{Authorization Code} acoplado à extensão PKCE. A adoção desse padrão mitigou os riscos inerentes a aplicações de página única (SPA), protegendo o processo de delegação de acesso contra a interceptação de \textit{tokens}. Adicionalmente, implementou-se o redirecionamento automático para a autenticação centralizada do Google, otimizando a experiência do usuário final.
+\begin{table}[H]
+    \centering
+    \caption{Matriz de Resumo das Intervenções (Issues)}
+    \label{tab:matriz_issues}
+    \begin{tabular}{|c|l|p{7cm}|c|}
+        \hline
+        \textbf{Issue} & \textbf{Tipo} & \textbf{Descrição Resumida} & \textbf{Status} \\ \hline
+        \#214 & \textit{Task} & Remoção de autenticação \textit{mock} e credenciais \textit{hardcoded} & Concluída \\ \hline
+        \#253 & \textit{Feature} & Implementação de Autenticação via Google e Keycloak & Concluída \\ \hline
+        \#179 & \textit{Task} & Correções no Keycloak e tratamento de sessão no Angular & Concluída \\ \hline
+        \#139 & \textit{Task} & V\&V comparando Protótipos (Figma) com Casos de Uso & Concluída \\ \hline
+        \#304 & \textit{Task} & Especificação e fundação para Testes de Unidade & Concluída \\ \hline
+        \#192 & \textit{Feature} & Construção da interface do \textit{Dashboard} 'Meus Processos' & Concluída \\ \hline
+    \end{tabular}
+\end{table}
 
-A segunda frente pautou-se nos processos de Verificação e Validação de interface (\textit{Issue} \#139 e \#179). A atividade focou no levantamento de divergências estruturais entre a documentação oficial (Casos de Uso) e os protótipos de alta fidelidade desenhados no Figma, resultando em correções aplicadas diretamente nos componentes visuais desenvolvidos em Angular.
+A primeira frente consistiu na refatoração da camada de segurança (\textit{Issue} \#214 e \#253). O desenvolvimento exigiu a substituição do fluxo estático pela integração com o protocolo OAuth 2.0 via Keycloak, empregando especificamente o fluxo \textit{Authorization Code} acoplado à extensão PKCE. A adoção desse padrão mitigou os riscos inerentes a aplicações de página única (SPA), protegendo o processo de delegação de acesso contra a interceptação de \textit{tokens}. Adicionalmente, implementou-se o redirecionamento automático para a autenticação centralizada do Google, otimizando a experiência do usuário final. Para garantir que todas as requisições ao \textit{back-end} contivessem a credencial de acesso sem sujar o código com lógicas repetitivas, implementou-se um interceptador HTTP, conforme ilustrado no Código \ref{cod:interceptor}.
 
-A terceira frente atuou na Garantia da Qualidade (QA). O autor estruturou o ambiente básico da suíte de testes de unidade (\textit{Issue} \#304). O propósito dessa implementação foi prevenir que as refatorações arquiteturais resultassem em regressões nas regras de negócio da aplicação.
+\begin{codigo}[H]
+\begin{verbatim}
+export const authInterceptor: HttpInterceptorFn = (req, next) => {
+  if (req.url.startsWith(environment.keycloakUrl)) {
+    return next(req);
+  }
+
+  const token = inject(AutenticacaoService).obterToken();
+  if (!token) {
+    return next(req);
+  }
+
+  const autenticado = req.clone({
+    setHeaders: { Authorization: `Bearer ${token}` },
+  });
+  return next(autenticado);
+};
+\end{verbatim}
+\caption{Interceptador HTTP em Angular para injeção automática do \textit{Token} JWT.}
+\label{cod:interceptor}
+\end{codigo}
+
+A segunda frente pautou-se nos processos de Verificação e Validação de interface (\textit{Issue} \#139 e \#179). A atividade focou no levantamento de divergências estruturais entre a documentação oficial (Casos de Uso) e os protótipos de alta fidelidade desenhados no Figma, resultando em correções aplicadas diretamente nos componentes visuais desenvolvidos em Angular. A Tabela \ref{tab:mapeamento_vv} apresenta o mapeamento das telas inspecionadas durante o processo de V\&V e as ações tomadas.
+
+\begin{table}[H]
+    \centering
+    \caption{Tabela de Mapeamento V\&V (Casos de Uso vs. Protótipo)}
+    \label{tab:mapeamento_vv}
+    \begin{tabular}{|l|p{8cm}|l|}
+        \hline
+        \textbf{Tela (Protótipo)} & \textbf{Descrição do Alinhamento / Inconsistência} & \textbf{Status V\&V} \\ \hline
+        Inscrição & Formulário ajustado para refletir validações do Caso de Uso & Ajustado \\ \hline
+        Home & Divergências na exibição de editais corrigidas & Ajustado \\ \hline
+        Processos & Casos de uso implementados adequadamente na listagem & Aderente \\ \hline
+        Meus Processos & \textit{Dashboard} criado seguindo rigorosamente os requisitos & Aderente \\ \hline
+        Detalhes do Processo & Inclusão de botões de ação faltantes conforme negócio & Ajustado \\ \hline
+        Cadastro & Limpeza de credenciais \textit{mockadas} e integração visual & Aderente \\ \hline
+    \end{tabular}
+\end{table}
+
+A terceira frente atuou na Garantia da Qualidade (QA). O autor estruturou o ambiente básico da suíte de testes de unidade (\textit{Issue} \#304). O propósito dessa implementação foi prevenir que as refatorações arquiteturais resultassem em regressões nas regras de negócio da aplicação. Para exemplificar a abordagem adotada, o Código \ref{cod:teste_unidade} demonstra a estrutura de um teste automatizado validando o comportamento na troca do código de autorização utilizando o verificador PKCE no \textit{front-end}.
+
+\begin{codigo}[H]
+\begin{verbatim}
+  it('deve enviar code_verifier do sessionStorage ao trocar code por token', () => {
+    sessionStorage.setItem('pkce_code_verifier', 'test-verifier-123');
+    sessionStorage.setItem('oauth_state', 'oauth-state');
+    const service = criarServico();
+
+    service.trocarCodePorToken('auth-code', 'oauth-state').subscribe();
+
+    const req = httpMock.expectOne(environment.keycloakUrl);
+    const body = new URLSearchParams(req.request.body);
+    expect(body.get('code_verifier')).toBe('test-verifier-123');
+    expect(sessionStorage.getItem('pkce_code_verifier')).toBeNull();
+    expect(sessionStorage.getItem('oauth_state')).toBeNull();
+
+    req.flush({ access_token: 'token', expires_in: 3600, token_type: 'bearer' });
+  });
+\end{verbatim}
+\caption{Estrutura de teste de unidade em Angular validando o envio do PKCE.}
+\label{cod:teste_unidade}
+\end{codigo}
 
 \section{Integração com a Equipe e Processo de Trabalho}
 
