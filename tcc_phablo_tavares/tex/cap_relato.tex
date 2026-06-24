@@ -15,7 +15,7 @@ Para o gerenciamento do processo de desenvolvimento, a equipe optou por uma meto
 
 \begin{figure}[H]
  \centering
- \includegraphics[width=0.9\textwidth]{./fig/fluxo_trabalho_kanban.png}
+ \includegraphics[width=0.9\textwidth,height=0.45\textheight,keepaspectratio]{./fig/fluxo_trabalho_kanban.png}
  \caption{Quadro Kanban utilizado para o acompanhamento e gestão das tarefas da equipe.}
  \label{fig:kanban}
 \end{figure}
@@ -46,7 +46,10 @@ As atividades desenvolvidas abrangeram a intervenção simultânea em três fren
 
 A primeira frente consistiu na refatoração da camada de segurança (\textit{Issue} \#214 e \#253). O desenvolvimento exigiu a substituição do fluxo estático pela integração com o protocolo OAuth 2.0 via Keycloak, empregando especificamente o fluxo \textit{Authorization Code} acoplado à extensão PKCE. A adoção desse padrão mitigou os riscos inerentes a aplicações de página única (SPA), protegendo o processo de delegação de acesso contra a interceptação de \textit{tokens}. Adicionalmente, implementou-se o redirecionamento automático para a autenticação centralizada do Google, otimizando a experiência do usuário final. Para garantir que todas as requisições ao \textit{back-end} contivessem a credencial de acesso sem sujar o código com lógicas repetitivas, implementou-se um interceptador HTTP, conforme ilustrado no Código \ref{cod:interceptor}.
 
+\begin{center}
+\begin{minipage}{0.95\textwidth}
 \begin{codigo}[H]
+\footnotesize
 \begin{verbatim}
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
   if (req.url.startsWith(environment.keycloakUrl)) {
@@ -67,6 +70,8 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
 \caption{Interceptador HTTP em Angular para injeção automática do \textit{Token} JWT.}
 \label{cod:interceptor}
 \end{codigo}
+\end{minipage}
+\end{center}
 
 A segunda frente pautou-se nos processos de Verificação e Validação de interface (\textit{Issue} \#139 e \#179). A atividade focou no levantamento de divergências estruturais entre a documentação oficial (Casos de Uso) e os protótipos de alta fidelidade desenhados no Figma, resultando em correções aplicadas diretamente nos componentes visuais desenvolvidos em Angular. A Tabela \ref{tab:mapeamento_vv} apresenta o mapeamento das telas inspecionadas durante o processo de V\&V e as ações tomadas.
 
@@ -88,7 +93,10 @@ A segunda frente pautou-se nos processos de Verificação e Validação de inter
 
 A terceira frente atuou na Garantia da Qualidade (QA). O autor estruturou o ambiente básico da suíte de testes de unidade (\textit{Issue} \#304). O propósito dessa implementação foi prevenir que as refatorações arquiteturais resultassem em regressões nas regras de negócio da aplicação. Para exemplificar a abordagem adotada, o Código \ref{cod:teste_unidade} demonstra a estrutura de um teste automatizado validando o comportamento na troca do código de autorização utilizando o verificador PKCE no \textit{front-end}.
 
+\begin{center}
+\begin{minipage}{0.95\textwidth}
 \begin{codigo}[H]
+\footnotesize
 \begin{verbatim}
   it('deve enviar code_verifier do sessionStorage ao trocar code por token', () => {
     sessionStorage.setItem('pkce_code_verifier', 'test-verifier-123');
@@ -109,6 +117,8 @@ A terceira frente atuou na Garantia da Qualidade (QA). O autor estruturou o ambi
 \caption{Estrutura de teste de unidade em Angular validando o envio do PKCE.}
 \label{cod:teste_unidade}
 \end{codigo}
+\end{minipage}
+\end{center}
 
 \section{Integração com a Equipe e Processo de Trabalho}
 
@@ -134,7 +144,7 @@ A estratégia de qualidade ancorou-se em dois eixos paralelos de validação. O 
 
 \begin{figure}[H]
  \centering
- \includegraphics[width=0.9\textwidth]{./fig/evidencia_code_review.png}
+ \includegraphics[width=0.9\textwidth,height=0.45\textheight,keepaspectratio]{./fig/evidencia_code_review.png}
  \caption{Evidência do processo de \textit{Code Review} exigido antes da integração de novas funcionalidades.}
  \label{fig:code_review}
 \end{figure}

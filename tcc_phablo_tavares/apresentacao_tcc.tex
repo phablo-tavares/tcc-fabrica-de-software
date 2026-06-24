@@ -1,0 +1,131 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[brazilian]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+% UFG Colors (approximate standard blue/yellow)
+\definecolor{ufgblue}{RGB}{0, 77, 133}
+\definecolor{ufgyellow}{RGB}{255, 204, 0}
+
+\mode<presentation> {
+  \usetheme{Boadilla}
+  \usecolortheme[named=ufgblue]{structure}
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{footline}[frame number]
+  \setbeamercolor{title}{fg=ufgblue, bg=ufgyellow!20}
+  \setbeamercolor{frametitle}{fg=white, bg=ufgblue}
+  \setbeamercolor{itemize item}{fg=ufgyellow}
+}
+
+\title[Evolução e Refatoração Full-Stack do SIPROS]{Relato de Experiência e Pesquisa-Ação: Evolução e Refatoração Full-Stack do Sistema SIPROS}
+\author[Phablo Tavares Paixão]{Phablo Tavares Paixão}
+\institute[UFG]{
+  Universidade Federal de Goiás - UFG\\
+  Instituto de Informática\\
+  Bacharelado em Engenharia de Software\\[1ex]
+  \textit{Orientadora:} Profa. Dra. Sofia Larissa da Costa Paiva\\
+  \textit{Coorientador:} Prof. Dr. Juliano Lopes de Oliveira
+}
+\date{2026}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{1. Introdução e Contexto}
+  \begin{itemize}
+    \setlength\itemsep{1em}
+    \item \textbf{O Projeto:} Sistema SIPROS.
+    \item \textbf{Onde:} Disciplina de Fábrica de Software (2026/1).
+    \item \textbf{A Equipe:} "Equipe Dourada".
+    \item \textbf{O Problema Original:} Base legada com dados \textit{mockados}, ausência de segurança real e falta de validação estruturada.
+    \item \textbf{A Solução:} Refatoração \textit{full-stack} orientada por qualidade e segurança.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{2. Objetivos e Metodologia}
+  \begin{itemize}
+    \setlength\itemsep{1em}
+    \item \textbf{Objetivo Geral:} Evoluir o sistema de um protótipo \textit{mockado} para uma aplicação segura e validada.
+    \item \textbf{Metodologia:} 
+    \begin{itemize}
+        \item Pesquisa-Ação: Intervenções contínuas na base de código seguidas de avaliação.
+        \item Práticas Ágeis: Inspirado em Kanban e Scrum (flexibilizado para o contexto acadêmico).
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{3. Foco em Segurança: OAuth 2.0 e PKCE}
+  \begin{itemize}
+    \setlength\itemsep{1em}
+    \item \textbf{Desafio:} SPAs (Single Page Applications) não podem armazenar segredos de cliente de forma segura.
+    \item \textbf{Implementação:}
+    \begin{itemize}
+        \item Integração com \textbf{Keycloak} para gestão de identidades.
+        \item Adoção do fluxo \textbf{OAuth 2.0 com PKCE} (Proof Key for Code Exchange).
+        \item Login social via Google habilitado de forma segura no \textit{front-end} Angular.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{4. Qualidade e Verificação \& Validação (V\&V)}
+  \begin{itemize}
+    \setlength\itemsep{1em}
+    \item \textbf{Alinhamento de Requisitos:} Mapeamento rigoroso de Casos de Uso versus interfaces no Figma.
+    \item \textbf{Garantia de Qualidade (QA):}
+    \begin{itemize}
+        \item Implementação de políticas rigorosas de \textbf{Code Review} via GitHub (Pull Requests).
+        \item Inserção de \textbf{Testes de Unidade} automatizados.
+        \item Foco nas métricas de qualidade de software (ISO 25010).
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{5. Resultados Alcançados}
+  \begin{itemize}
+    \setlength\itemsep{1em}
+    \item Autenticação e autorização funcionais no ambiente de Fábrica.
+    \item Fluxo de desenvolvimento estabelecido (rastreabilidade desde o requisito até o PR aprovado).
+    \item Código mais maduro, testável e manutenível em comparação à base legada inicial.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{6. Lições Aprendidas}
+  \begin{itemize}
+    \setlength\itemsep{1em}
+    \item \textbf{Hard Skills:} Arquitetura de segurança, interceptadores HTTP, testes no ecossistema Angular.
+    \item \textbf{Soft Skills:} Trabalho colaborativo, resolução de conflitos, resiliência perante o código legado.
+    \item \textbf{Conselhos aos futuros alunos:}
+    \begin{itemize}
+        \item Abrace o código legado como oportunidade de aprendizado.
+        \item Construa a cultura de testes desde o \textit{Sprint} 1.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{7. Trabalhos Futuros e Conclusão}
+  \begin{itemize}
+    \setlength\itemsep{1em}
+    \item \textbf{Trabalhos Futuros:}
+    \begin{itemize}
+        \item Alcançar 100\% de cobertura de testes no \textit{back-end}.
+        \item Implementação de testes \textit{End-to-End} (E2E).
+    \end{itemize}
+    \vspace{0.5em}
+    \item \textbf{Conclusão:} A Fábrica de Software não apenas entregou valor técnico ao SIPROS, mas funcionou como um simulador fidedigno dos desafios da indústria real de engenharia de software.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[plain, c]
+  \begin{center}
+    \Huge \textbf{Obrigado(a)!}
+    
+    \vspace{1em}
+    \Large Phablo Tavares Paixão
+  \end{center}
+\end{frame}
+
+\end{document}

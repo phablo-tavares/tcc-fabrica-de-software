@@ -21,12 +21,15 @@ O TCC já possui sua estrutura principal finalizada. Toda a narrativa foi constr
     *   Metadados do autor, orientadores e perfil profissional preenchidos.
     *   Agradecimentos redigidos. Dedicatória e Epígrafe desativadas.
     *   **Resumo e Abstract** escritos e alinhados com o escopo do projeto.
+    *   Listas geradas e configuradas com sucesso (`\tabelas[figtabcod]` no template) limpas e sem páginas fantasmas de algoritmos. O pacote `babel` também foi ajustado para `brazilian` para evitar *warnings*.
 *   **Capítulo 1 (Introdução) - `tex/cap_introducao.tex`:**
     *   Concluído. Apresenta a motivação, o contexto da equipe, os objetivos gerais e específicos, a metodologia acadêmica (pesquisa-ação) e reforça que a organização da equipe foi *inspirada* no Scrum/Kanban (sem aderência obrigatória de 100%).
 *   **Capítulo 2 (Bases Teóricas) - `tex/cap_fundamentos.tex`:**
     *   Concluído. Cobre as bases de segurança web (OAuth 2.0 / PKCE), normativas de Qualidade (ISO 25010) e V&V (SWEBOK). Discute criticamente as ferramentas (Keycloak, Angular, Docker, GitHub).
+    *   Contém o Diagrama de Sequência do Fluxo de Autenticação OAuth 2.0 (PKCE) gerado via Mermaid/Kroki.
 *   **Capítulo 3 (Relato de Experiência) - `tex/cap_relato.tex`:**
     *   Concluído. Relata a evolução da base legada que possuía dados *mockados*. Detalha a implementação do Google via Keycloak, o mapeamento de Casos de Uso vs Figma (V&V), e as políticas de *Code Review* e testes de unidade.
+    *   Rico em recursos visuais e técnicos: Possui Tabelas (Matriz de Intervenções e V\&V), Figuras (Quadro Kanban, PR de Code Review) e Blocos de Código (Interceptador Angular e Estrutura de Teste de Unidade), com margens corrigidas para evitar *Overfull hbox/vbox*.
 *   **Capítulo 4 (Conclusões) - `tex/cap_conclusoes.tex`:**
     *   Concluído. Comprova o atingimento dos objetivos. Traz reflexões sobre a evolução de *hard* e *soft skills*. Lista conselhos para futuros alunos (lidar bem com código legado, focar em testes desde o início) e projeta trabalhos futuros (testes E2E, cobertura 100% no *back-end*).
 *   **Referências Bibliográficas - `bib/referencias-tcc.bib`:**
@@ -40,10 +43,9 @@ docker run --rm -v "$PWD":/workdir -w /workdir texlive/texlive latexmk -pdf mono
 
 ## 5. Próximos Passos (Para a IA)
 Ao assumir este contexto, suas responsabilidades prováveis serão:
-1. Revisar o PDF gerado (`monografia-tcc-bes.pdf`) em busca de ajustes finos de formatação (quebras de página, alinhamento de listas).
-2. Auxiliar na inclusão de novas referências científicas específicas (caso o orientador demande novos artigos).
-3. Inserir imagens, apêndices ou tabelas, caso o usuário solicite.
-4. Refinar o vocabulário e coesão textual em revisões pontuais.
+1. Auxiliar em pequenos refinamentos gramaticais e de coesão, ou possíveis correções demandadas pela banca avaliadora.
+2. Auxiliar na inclusão de novas referências científicas ou eventuais formatações solicitadas.
+3. Se necessário, gerar ou atualizar novos apêndices ou materiais suplementares.
 
 **Comportamento Exigido da IA:**
 - Seja **objetivo e direto**.

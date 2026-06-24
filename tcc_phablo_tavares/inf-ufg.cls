@@ -84,7 +84,7 @@
 \DeclareOption{nocolorlinks}{
  \setboolean{link}{true}}
 
-\DeclareOption{american,english,french,german,brazil,portuguese}{
+\DeclareOption{american,english,french,german,brazilian,portuguese}{
  \PassOptionsToPackage{\CurrentOption}{babel,fancyref}}
 
 \ProcessOptions\relax
@@ -132,7 +132,7 @@
 
 % Hyphenation
 %% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-\RequirePackage[english,portuguese,brazil]{babel} %Termos pré-definidos em Português
+\RequirePackage[english,portuguese,brazilian]{babel} %Termos pré-definidos em Português
 \RequirePackage[T1]{fontenc}                      %Hifenização correta em Português
 % \RequirePackage[ansinew]{inputenc}                %Inserção de acentos
 \RequirePackage[utf8]{inputenc}                %Inserção de acentos
